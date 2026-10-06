@@ -1,0 +1,4 @@
+.env
+ml_evm.db
+__pycache__/
+*.pyc

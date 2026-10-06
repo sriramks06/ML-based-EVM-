@@ -1,0 +1,32 @@
+ML-Enhanced EVM Model Evaluation Report
+==================================================
+
+Total Projects: 150
+Train Projects: 120 (3049 rows)
+Test Projects: 30 (770 rows)
+
+Features Used:
+BAC, Planned_Duration, PV, EV, AC, CPI, SPI, EAC, Requirement_Volatility, Change_Requests, Scope_Change_Percentage, Task_Completion_Rate, Resource_Utilization, Team_Experience, Task_Complexity, Defect_Rate, Rework_Rate, Dependency_Delays, Delay_Severity, Project_Completion_Percentage
+
+COST MODELS
+--------------------------------------------------
+            Model           MAE          RMSE       R²
+Linear Regression 292558.061052 531509.003144 0.802148
+    Random Forest 433420.637443 909438.351370 0.420751
+Gradient Boosting 335425.398670 751771.653513 0.604186
+
+Best Cost Model: Linear Regression
+
+SCHEDULE MODELS
+--------------------------------------------------
+            Model      MAE     RMSE       R²
+Linear Regression 3.411686 4.882827 0.617631
+    Random Forest 2.017351 4.021367 0.740649
+Gradient Boosting 1.295846 2.995357 0.856108
+
+Best Schedule Model: Gradient Boosting
+
+BASELINE EVM COMPARISON (Test Set)
+--------------------------------------------------
+Cost (Traditional EAC)      - MAE: 395697.39, RMSE: 896145.03, R²: 0.4376
+Schedule (Planned/SPI)      - MAE: 2.19, RMSE: 4.89, R²: 0.6163
